@@ -16,22 +16,19 @@ user_name_age()
 def user_request():
     answer = input("Do you need any additional help?(Y/N) ")
     if answer == "Y":
-        menu()
+        options()
     else:
         print("Alright, continue shopping.")   
 user_request()
 
-def menu():
+
+
+def options():
     print("\n **Joshua's Soccer Shop Menu**")
     print("1. NF")
     print("2. NF")
     print("3. NF")
     print("4.Exit \n")
-    options = int(input("Select a number from 1-4: "))
-    options()
-menu()    
-
-def options():
     options = int(input("Select a number from 1-4: "))
     if options == 1:
         print("NF")
@@ -43,5 +40,4 @@ def options():
         print("Goodbye...")    
     else:
         exit
-options()            
-
+options()
