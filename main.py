@@ -13,9 +13,35 @@ def user_name_age():
         print("Please retry and enter a valid age.")          
 user_name_age() 
 
+def user_request():
+    answer = input("Do you need any additional help?(Y/N) ")
+    if answer == "Y":
+        menu()
+    else:
+        print("Alright, continue shopping.")   
+user_request()
 
-#def user_request():
-# print("HOLD")
-#user_request()
-#def menu():
- #   choice = input("Select the number that you have questions pertaining to: ")
+def menu():
+    print("\n **Joshua's Soccer Shop Menu**")
+    print("1. NF")
+    print("2. NF")
+    print("3. NF")
+    print("4.Exit \n")
+    options = int(input("Select a number from 1-4: "))
+    options()
+menu()    
+
+def options():
+    options = int(input("Select a number from 1-4: "))
+    if options == 1:
+        print("NF")
+    elif options == 2:
+        print("NF")   
+    elif options == 3:
+        print("NF")    
+    elif options == 4:
+        print("Goodbye...")    
+    else:
+        exit
+options()            
+
