@@ -6,29 +6,19 @@ def user_name_age():
     if age < 14:
         print("You're pretty young to be shopping here...")
     elif 14<= age <18:
-        print("I guess you're here to blow your hard earned money away...")  
+        print("I guess you're here to blow your new paycheck away...")  
     elif age>=18:
         print("Have fun shopping!")
     else:
         print("Please retry and enter a valid age.")          
 user_name_age() 
 
-def user_request():
-    answer = input("Do you need any additional help?(Y/N) ")
-    if answer == "Y":
-        options()
-    else:
-        print("Alright, continue shopping.")   
-user_request()
-
-
-
 def options():
     print("\n **Joshua's Soccer Shop Menu**")
     print("1. NF")
     print("2. NF")
     print("3. NF")
-    print("4.Exit \n")
+    print("4. Exit \n")
     options = int(input("Select a number from 1-4: "))
     if options == 1:
         print("NF")
@@ -40,4 +30,16 @@ def options():
         print("Goodbye...")    
     else:
         exit
-options()
+
+def user_request():
+    answer = input("\n Hey there, do you need any additional help? (Y/N) ")
+    if answer == "Y" or answer == "y":
+        options()
+    elif answer == "N" or answer == "n":
+        print("Alrighty, continue shopping!")    
+    else:
+        exit   
+user_request()
+
+
+
