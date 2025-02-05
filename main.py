@@ -71,8 +71,8 @@ def checkout():#function to calculate total cost
     print("Thank you for shopping with us!")
 
 def return_item():#function to return item
-    user_return = input("Would you like to return an item? (yes/no) ")
-    if user_return.lower == "yes":
+    user_return = input("Would you like to return an item? (y/n) ")
+    if user_return.lower() == "y":
         print(f"Here is your cart: {cart}")
         item_return = input("Which item would you like to return? List the number of the item: ")
         for item in cart:
@@ -82,14 +82,14 @@ def return_item():#function to return item
                 print(f"Here is your updated cart: {cart}")
             else:
                 print("Invalid item, please try again.")
-    elif user_return.lower == "no":
+    elif user_return.lower() == "n":
         print(f"Here is your cart: {cart}")
     else:
         print("Invalid input, please try again.")
 
 def exchange_item():#function to exchange item
-    user_exchange = input("Would you like to exchange an item? (yes/no) ")
-    if user_exchange.lower == "yes":
+    user_exchange = input("Would you like to exchange an item? (y/n) ")
+    if user_exchange.lower() == "y":
         print(f"Here is your cart: {cart}")
         item_exchange = input("Which item would you like to exchange? List the number of the item: ")
         for item in cart:
@@ -99,7 +99,7 @@ def exchange_item():#function to exchange item
                 user_purchase()
             else:
                 print("Invalid item, please try again.")
-    elif user_exchange.lower == "no":
+    elif user_exchange.lower() == "n":
         print(f"Here is your cart: {cart}")
     else:
         print("Invalid input, please try again.")
