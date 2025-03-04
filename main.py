@@ -1,17 +1,29 @@
 """
 Greet the user and ask for their information
 """
-print("Welcome to Joshua's Thrift Shop!") #greeting
-name = input("\nWhat is your name? ") #collecting user's name
-age = int(input(f"\nHello {name}, How old are you? "))#collecting user's age
+def greetings():
+    print("Welcome to Joshua's Thrift Shop!") #greeting
+    name = input("\nWhat is your name? ") #collecting user's name
+    age = int(input(f"\nHello {name}, How old are you? "))#collecting user's age
 
-if age >= 18:#checking if user is old enough to shop
-    print("\nYou are welcome to shop with us, and choose wisely!")
-elif age <= 17: 
-    print("\nYou're pretty young to be shopping here, but take care!")
-else:
-    print("Invalid age, please try again.")
+    if age >= 18:#checking if user is old enough to shop
+        print("\nYou are welcome to shop with us, and choose wisely!")
+    elif age <= 17: 
+        print("\nYou're pretty young to be shopping here, but take care!")
+    else:
+        print("Invalid age, please try again.")
 
+def chat():#function to chat with user
+        print("\nSelect from the list of help options below:\n")
+        print(
+            "1. Purchase items - to buy items\n"
+            "2. Return an item - to return an item\n"
+            "3. Exchange an item - to exchange an item\n"
+            "4. View cart - to view your cart\n"
+            "5. Checkout - checkout your items\n"
+            "6. Exit - to exit\n"
+        )
+        return input("What would you like to do? Input the number of the option: ")#collecting user's choice
 
 """
 Display items in stock
@@ -105,32 +117,28 @@ def exchange_item():#function to exchange item
         print("Invalid input, please try again.")
 #calling the function to return item     
 
-def chat():#function to chat with user
-    
-    user_chat = input("Do you need any help? (y/n) ")
-    if user_chat.lower() == "y":
-        print("\nSelect from the list of help otions below:\n")
-        user_chat_selection = input("1. Return an item - to return an item\n2. Purchase more items - to buy more items\n3. Exchange an item - to exchange an item\n4. View cart - to view your cart\n5. Checkout - checkout your items\n6. Exit - to exit: \n")
-        if user_chat_selection == "1":
-            return_item()
-        elif user_chat_selection == "2":
-            user_purchase()    
-        elif user_chat_selection == "3":
+def selection():
+    while True:
+        choice = chat()
+        if choice == "1":
+            user_purchase()
+        elif choice == "2":
+            return_item()    
+        elif choice == "3":
             exchange_item()
-        elif user_chat_selection == "4":
+        elif choice == "4":
             print(f"Here is your cart: {cart}")
-        elif user_chat_selection == "5":
-            checkout()    
-        elif user_chat_selection == "6":
+        elif choice == "5":
+            checkout()
+            break
+        elif choice == "6":
             print("Okay, thank you for shopping with us!")
+            break
         else:
             print("Invalid input, please try again.")
-    elif user_chat.lower() == "n":
-        print("Okay, thank you for shopping with us!")
-    else:
-        print("Invalid input, please try again.")
 
-user_purchase()
-chat()
+if __name__ == "__main__":
+    greetings()
+    selection()
 
 
